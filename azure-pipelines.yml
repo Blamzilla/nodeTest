@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: Test Agent
+
 
 variables:
 
@@ -29,7 +29,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+      name: Test Agent
 
     steps:
     - task: NodeTool@0
@@ -63,7 +63,8 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     environment: $(environmentName)
-    pool: Test Agent
+    pool: 
+      name: Test Agent
     strategy:
       runOnce:
         deploy:
