@@ -6,6 +6,8 @@
 trigger:
 - main
 
+pool: Test Agent
+
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
@@ -18,7 +20,7 @@ variables:
   environmentName: 'nodeExpressApp-cl'
 
   # Agent VM image name
-  pool: Test Agent
+  
 
 stages:
 - stage: Build
