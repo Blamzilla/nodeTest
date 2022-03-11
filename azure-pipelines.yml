@@ -63,8 +63,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     environment: $(environmentName)
-    pool:
-      vmImage: $(vmImageName)
+    pool: Test Agent
     strategy:
       runOnce:
         deploy:
